@@ -1,8 +1,10 @@
 import tkinter as tk
 from tkinter import messagebox
 import random
-import twilio 
+import boto3
 
+from sendmail import send_otp
+from sendmail import send_report
 
 ##window detailed
 window = tk.Tk()
@@ -30,17 +32,21 @@ def create_otp_win():
     otp_entry = tk.Entry(otp_win, font=("Helvetica", 12), textvariable=otp_var)
     otp_entry.pack(pady=10)
 
-    send_otp_button = tk.Button(otp_win, text="Send OTP", font=("Helvetica", 12))
-    send_otp_button.pack(pady=10)
+    verify_otp_button = tk.Button(otp_win, text="Verify OTP", font=("Helvetica", 12))
+    verify_otp_button.pack(pady=10)
 
 def printgenerating():
     checkvar = uname_strvar.get()
     if checkvar in reg_nums:
+        send_otp()
         create_otp_win()
+    
         
     else:
+        send_report(checkvar)
         messagebox.showerror(title="Error",message="Number is not registered")
-        messagebox.showwarning(title="reported",message="Reported to root user")
+        messagebox.showwarning(title="reported",message="Reported to the root user")
+
 
 
 
@@ -74,4 +80,3 @@ get_otp_but.place(x = 710, y = 300)
 
 window.mainloop()
 
-#3THLHAASQ3DX7SG96CL189HQ
