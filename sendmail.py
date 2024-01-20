@@ -6,8 +6,8 @@ import random
 def send_otp():
     
 
-    aws_access_key_id1 = 'AKIASI6SRCQZSBLDSRW6'
-    aws_secret_access_key1 = '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'
+    aws_access_key_id1 = 'pppp'
+    aws_secret_access_key1 = 'ppppp'
     region_name1 = 'ap-south-1'
 
     sns = boto3.client('sns', aws_access_key_id=aws_access_key_id1, aws_secret_access_key=aws_secret_access_key1, region_name=region_name1)
@@ -45,8 +45,8 @@ def send_report(num):
 
     
 
-    aws_access_key_id1 = 'AKIASI6SRCQZSBLDSRW6'
-    aws_secret_access_key1 = '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'
+    aws_access_key_id1 = ''
+    aws_secret_access_key1 = 'V'
     region_name1 = 'eu-north-1'
 
     sns = boto3.client('sns', aws_access_key_id=aws_access_key_id1, aws_secret_access_key=aws_secret_access_key1, region_name=region_name1)
